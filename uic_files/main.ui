@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0" colspan="2">
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="tabPosition">
+       <enum>QTabWidget::North</enum>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideLeft</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <property name="documentMode">
+       <bool>false</bool>
+      </property>
+      <property name="tabsClosable">
+       <bool>false</bool>
+      </property>
+      <property name="movable">
+       <bool>false</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="tab">
+       <attribute name="title">
+        <string>Directory</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_4">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>Select A Directory</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_2">
+           <item row="1" column="0" colspan="2">
+            <widget class="QListWidget" name="movies_list"/>
+           </item>
+           <item row="0" column="1">
+            <widget class="QPushButton" name="browse_directories_button">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Maximum" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="text">
+              <string>Browse</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QLineEdit" name="directory_path">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Fixed">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="readOnly">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_2">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="title">
+           <string>File Extensions</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_3">
+           <item row="1" column="0" colspan="4">
+            <widget class="QListWidget" name="file_extensions_table">
+             <item>
+              <property name="text">
+               <string>txt</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>srt</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>jpg</string>
+              </property>
+             </item>
+             <item>
+              <property name="text">
+               <string>png</string>
+              </property>
+             </item>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QRadioButton" name="whitelist">
+             <property name="enabled">
+              <bool>false</bool>
+             </property>
+             <property name="text">
+              <string>Whitelist</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="2">
+            <widget class="QLineEdit" name="file_extension">
+             <property name="placeholderText">
+              <string>ex: txt, png, tif</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="0">
+            <widget class="QRadioButton" name="blacklist">
+             <property name="text">
+              <string>Blacklist</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="3">
+            <widget class="QPushButton" name="add_file_extension">
+             <property name="text">
+              <string>Add</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QProgressBar" name="progress">
+          <property name="value">
+           <number>0</number>
+          </property>
+          <property name="textVisible">
+           <bool>false</bool>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tab_2">
+       <attribute name="title">
+        <string>Preset</string>
+       </attribute>
+       <layout class="QGridLayout" name="gridLayout_5">
+        <item row="0" column="0">
+         <widget class="QGroupBox" name="groupBox_4">
+          <property name="title">
+           <string>Preset File</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_7">
+           <item row="0" column="0">
+            <widget class="QCheckBox" name="checkBox">
+             <property name="text">
+              <string>Load From GUI</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="0">
+            <spacer name="verticalSpacer_2">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="1">
+         <widget class="QGroupBox" name="groupBox_3">
+          <property name="title">
+           <string>Encoder</string>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_6">
+           <item row="6" column="1">
+            <widget class="QRadioButton" name="radioButton_9">
+             <property name="text">
+              <string>H265 NVENC</string>
+             </property>
+            </widget>
+           </item>
+           <item row="9" column="1">
+            <widget class="QRadioButton" name="radioButton_12">
+             <property name="text">
+              <string>VP8</string>
+             </property>
+            </widget>
+           </item>
+           <item row="3" column="1">
+            <widget class="QRadioButton" name="radioButton_6">
+             <property name="text">
+              <string>X265</string>
+             </property>
+            </widget>
+           </item>
+           <item row="1" column="1">
+            <widget class="QRadioButton" name="radioButton_4">
+             <property name="text">
+              <string>X264 10-Bit</string>
+             </property>
+            </widget>
+           </item>
+           <item row="12" column="1">
+            <spacer name="verticalSpacer">
+             <property name="orientation">
+              <enum>Qt::Vertical</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>20</width>
+               <height>40</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="7" column="1">
+            <widget class="QRadioButton" name="radioButton_10">
+             <property name="text">
+              <string>MPEG4</string>
+             </property>
+            </widget>
+           </item>
+           <item row="0" column="1">
+            <widget class="QRadioButton" name="radioButton_3">
+             <property name="text">
+              <string>X264</string>
+             </property>
+            </widget>
+           </item>
+           <item row="10" column="1">
+            <widget class="QRadioButton" name="radioButton_13">
+             <property name="text">
+              <string>VP9</string>
+             </property>
+            </widget>
+           </item>
+           <item row="4" column="1">
+            <widget class="QRadioButton" name="radioButton_7">
+             <property name="text">
+              <string>X265 10-Bit</string>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QRadioButton" name="radioButton_5">
+             <property name="text">
+              <string>H264 NVENC</string>
+             </property>
+             <property name="checked">
+              <bool>true</bool>
+             </property>
+            </widget>
+           </item>
+           <item row="5" column="1">
+            <widget class="QRadioButton" name="radioButton_8">
+             <property name="text">
+              <string>X265 12-Bit</string>
+             </property>
+            </widget>
+           </item>
+           <item row="8" column="1">
+            <widget class="QRadioButton" name="radioButton_11">
+             <property name="text">
+              <string>MPEG2</string>
+             </property>
+            </widget>
+           </item>
+           <item row="11" column="1">
+            <widget class="QRadioButton" name="radioButton_14">
+             <property name="text">
+              <string>Theora</string>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="1" column="0" colspan="2">
+         <widget class="QPushButton" name="begin_encoding_button">
+          <property name="text">
+           <string>Begin Encoding</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
