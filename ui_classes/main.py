@@ -1,7 +1,9 @@
+import json
 import os
 from dataclasses import dataclass
 
-from PySide6.QtCore import QObject, Signal, QThread
+from PySide6.QtCore import QObject, Signal, QThread, QUrl
+from PySide6.QtNetwork import QNetworkAccessManager, QNetworkReply, QNetworkRequest
 from PySide6.QtWidgets import QMainWindow, QFileDialog
 
 from ui.main import Ui_MainWindow
@@ -34,6 +36,17 @@ class MainWindow(QMainWindow):
         self.thread.started.connect(self.discovery_worker.run)
         self.discovery_worker.add_movie.connect(self.load_discovered_movie)
         self.discovery_worker.finished.connect(self.finished_discovering_movies)
+
+        manager = QNetworkAccessManager(self)
+        manager.finished[QNetworkReply].connect(self.replyFinished)
+
+        manager.get(QNetworkRequest(QUrl("https://jsonplaceholder.typicode.com/todos/1")))
+
+    def replyFinished(self, n):
+        temp = bytes(n.readAll()).decode("utf8")
+        temp = json.loads(temp)
+
+        print(temp)
 
     def begin_encoding(self):
         window = TranscodeWindow(self.movies)
